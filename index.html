@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Project Gallery</title>
+  <!--
+      Add CSS as you like linked or otherwise, but encapsulate most within the card components.  
+
+      You should also include the script code separately.  You may wish to have individual files 
+      for the customElement vs the page layout and CRUD actions if you do them. Regardless of 
+      what you do you use ES modules and vanilla JS.
+    -->
+    <script defer src="projectCard.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!--
+      This page will contain a list of cards which will contain cards that overview each project in 
+      your portfolio. You will dynamically create these cards as CustomElements using JavaScript 
+      and populate them from localStorage and from a JSON file fetched remotely from a server using 
+      Ajax or fetch.
+
+      You should create a CustomElement called <project-card> which will contain at least the 
+      following elements:
+
+        - <h2>Project Name</h2>
+        - <img src="image.jpg" alt="Project Image">
+        - <p>Project Description</p>
+        - <a href="URL">Read More</a>
+
+      You can have more things if you like such as date, keywords or tags, author, etc.
+
+      Make two buttons "Load Local" and "Load Remote" in both cases you will fetch and array of JSON 
+      data to populate your cards. The difference is that the "Load Local" button will fetch from 
+      localStorage and the "Load Remote" button will fetch from a remote server. 
+
+      - You should use CSS variables to style your cards.
+      - You should use CSS grid or flexbox to layout your cards.
+      - You should use the CustomElements API to create your custom elements.
+      - You should use either JSONBin API or My JSON Server to store your data in the cloud.
+      - You should use the localStorage API to store your data locally.
+      - You should use the fetch or XMLHttpRequest API to fetch data from a server.
+      
+      - You can use any random data you like and images you like for the cards, but eventually you 
+      may want to change it.
+      - You can use the Unsplash API to get random images for your cards. 
+      - You can use the JSONPlaceholder API to get random data for your cards. 
+      - You can use the DOM API to add your custom elements to the DOM. 
+
+      You should be able to do this for some canned set of data you store in localStorage 
+      and the cloud.
+
+      For extra credit (10%) you can create a second page crud.html which has a form that allows you 
+      to perform CRUD actions (create, add, update, delete) on the data in either the localStorage or 
+      cloud based storage. You may roll this code yourself or use something like ZingGrid or any 
+      other simple custom element you can find for your fake backend.
+
+      In all cases except the following section you may not use any libraries or frameworks. You 
+      must use the native APIs and vanilla JavaScript. This includes Lit and jQuery as well as any 
+      other library or framework.
+
+    -->
+
+    <section>
+      <h1>
+        Project 4 - Part 2
+      </h1>
+      <p>
+        1.  "Load Local" button will fetch from localStorage <br>
+        2.  "Load Remote" button will fetch from a remote server. 
+      </p>
+      <button id="loadLocal">
+        Load Local
+      </button>
+      <button id="loadRemote">
+        Load Remote
+      </button>
+    </section>
+
+    <div class="container">
+      <project-card project-name="test"></project-card>
+    </div>
+
+
+</body>
+
+</html>
