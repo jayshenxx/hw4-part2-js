@@ -12,6 +12,7 @@ let html = `
             text-align: center;
         }
         .card img {
+            margin-top:20px;
             width: 100%;
         }
         .card h2, .card p {
@@ -21,10 +22,28 @@ let html = `
             display: block;
             margin: 15px;
         }
+        .btn {
+            color:white;
+            border: none;
+        }
+        .btn:hover {
+            cursor:pointer;
+        }
+        .btn-edit {
+            background-color: var(--blue-color);
+        }
+        .btn-delete {
+            background-color: var(--red-color);
+        }
+        button {
+            padding: 5px 10px;
+        }
     </style>
 
     <div class="card">
         <h2>${projectName}</h2>
+        <button class="btn btn-edit" id="editProject">Edit</button>
+        <button class="btn btn-delete" id="deleteProject">Delete</button>
         <img src="${img}" alt="Project Image">
         <p>${description}</p>
         <a target="_blank" href="${link}">Read More</a>
@@ -83,7 +102,6 @@ class projectCard extends HTMLElement {
         let link = this.shadowRoot.querySelector('a');
         link.href = value;
     }
-    
 }
 
 window.customElements.define("project-card", projectCard);

@@ -85,7 +85,7 @@ function handleNewProject() {
         <option value="billing">Javascript</option>
     </select>
     <br>
-    <input class="btn" type="submit" value="Create Project">
+    <input class="btn btn-new" type="submit" value="Create Project">
   </form>
   `;
 
