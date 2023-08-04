@@ -1,18 +1,15 @@
-let button1 = document.getElementById("loadLocal");
-let button2 = document.getElementById("loadRemote");
-
-function handleClickLocal() {
-    //remove all childs
-    let containerElement = document.querySelector('.container');
-    containerElement.replaceChildren();
-}
+let btnRemote = document.getElementById("loadRemote");
 
 function handleClickRemote() {
 
     //remove all childs
     let containerElement = document.querySelector('.container');
     containerElement.replaceChildren();
-    
+    const newForm = document.getElementById("newForm");
+    newForm.replaceChildren();
+
+    document.getElementById("newProject").disabled= true;
+
     //json
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.jsonbin.io/v3/b/64c9be79b89b1e2299c9c036/latest", true);
@@ -45,11 +42,8 @@ function handleClickRemote() {
                 let containerElement = document.querySelector('.container');
                 containerElement.appendChild(e);
             }
-    
-    
         }
     };
 }
 
-button1.addEventListener("click", handleClickLocal);
-button2.addEventListener("click", handleClickRemote);
+btnRemote.addEventListener("click", handleClickRemote);
